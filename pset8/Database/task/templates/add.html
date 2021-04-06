@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body%}
+    <form action="/add" method="post"> <! -- standard method is GET, POST: to indicate when making a request that i'm trying to send data to the server  -->
+        <input id="task" name="task" type="text" placeholder="Task name">
+        <input id="submit" type="submit" disabled>
+    </form>
+    <script> // <! -- only enable submit button if there is acutally a text in task --> to access input fields, we give ID in the input tags
+        document.querySelector("#task").onkeyup = function(){ //onkeyup event happens when i lift my finger off a key
+            if (document.querySelector("#task").value === ""){
+                document.querySelector("#submit").disabled = true;
+            } else {
+                document.querySelector("#submit").disabled = false;
+            }
+        }
+    </script>
+{% endblock %}

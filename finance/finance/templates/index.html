@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}index{% endblock %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th>Stock Symbol</th>
+            <th># of shares</th>
+            <th>Curr. price/share</th>
+            <th>Amount</th>
+        </tr>
+        {% for stock in stock_infos %}
+            <tr>
+                <td>{{ stock["symbol"] }}</td>
+                <td>{{ stock["buy_shares"] }}</td>
+                <td>{{ price_list[stock["symbol"]]["price"] }}</td>
+                <td>{{ stock["buy_shares"]*price_list[stock["symbol"]]["price"]}}</td>
+
+            </tr>
+        {% endfor %}
+        <tr>
+            <td>CASH</td>
+            <td> -- </td>
+            <td> -- </td>
+            <td>{{ cash[0]["cash"] }}</td>
+        </tr>
+        <tr>
+            <td>TOTAL</td>
+            <td> -- </td>
+            <td> -- </td>
+            <td>{{ total }}</td>
+        </tr>
+
+    </table>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        padding: 10px;
+        }
+    </style>
+{% endblock %}

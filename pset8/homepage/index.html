@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>My Homepage</title>
+        <style>
+          h2 {text-align:center;}
+          p {text-align:center}
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  <a class="nav-link" href="pokemon.html">Pokemon</a>
+                  <a class="nav-link" href="crypto.html">Cryptocurrency</a>
+                  <a class="nav-link" href="vienna.html">City Vienna</a>
+                </div>
+              </div>
+            </div>
+        </nav>
+        <h2>
+            My Homepage
+        </h2>
+        <p>
+          <br><br>
+          Hello stranger. Through these pages(see top in the navigation bar) you see a few information about my interests and where I am from. <br>
+          But here a bit about myself: <br>
+          One of my hobbies is th play Pokemon Go since the start of the game. So in the section "Pokemon" I will introduce you to my favourite pokemon of mine. <br>
+          Then next I show you about a special section about the topic finance - Cryptocurrency, especially the one at this time of writing the Top #1. <br>
+          And lastly I will show you around where I live. Deal? Go on click one of the topic in the navigation bar. <br>
+          -wensquared
+
+
+        </p>
+        <div class="footer">
+          <p><cite>navbar from <a href="https://getbootstrap.com/docs/5.0/components/navbar/">boostrap.com</a></cite></p>
+          <select>
+            <option value="large">Large Text</option>
+            <option value="initial" selected>Medium Text</option>
+            <option value="small">Small Text</option>
+          </select>
+          <script>
+            document.querySelector("select").onchange = function(){
+              document.querySelector("p").style.fontSize = this.value;
+              document.querySelector("cite").style.fontSize = this.value;
+            }
+          </script>
+          <button onclick='dark()'>Dark mode on/off</button>
+          <script>
+            function dark() {
+             var element = document.body;
+             element.classList.toggle("dark-mode");
+            }
+          </script>
+        </div>
+    </body>
+</html>

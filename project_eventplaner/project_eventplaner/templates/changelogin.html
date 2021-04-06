@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change Login details
+{% endblock %}
+
+{% block main %}
+    <p>Info: Here you can change your username and password.</p>
+    <form action="/changelogin" method="post">
+        <div class="form-group">
+            Your current username is: {{oldusername}}
+        </div> <br>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="New username" type="text">
+        </div> <br>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="New password" type="password">
+        </div> <br>
+        <div class="form-group">
+            <input class="form-control" name="confpassword" placeholder="Confirm password" type="password">
+        </div> <br>
+        <button class="btn btn-primary" type="submit">Change</button>
+    </form>
+{% endblock %}

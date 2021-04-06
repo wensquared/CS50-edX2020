@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change Login details
+{% endblock %}
+
+{% block main %}
+    <p>Info: Here you can add your companion(s). In the overview section you see how many you can invite.</p>
+    <form action="/addguest" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="firstname" placeholder="First name" type="text">
+        </div> <br>
+        <div class="form-group">
+            <input class="form-control" name="lastname" placeholder="Last name" type="text">
+        </div> <br>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+
+
+
+{% endblock %}

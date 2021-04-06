@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Overview
+{% endblock %}
+
+{% block main %}
+    <h3> Hello {{ mainguest[0]['firstname'] }} {{ mainguest[0]['lastname'] }} </h3>
+    <br>
+    <h4>Information</h4>
+    <p>We would like to invite you and your companion(s) to our wedding. By logging in that means that you already got our invitation with all the information
+        when and where it is. This site helps us, especially our wedding planer, with the organization of this beautiful event.</p>
+    <p>Please fill those forms in each section. If you have any question, just feel free to contact us. (Contact information is on the invitation card.)</p>
+    <p>You can bring up to {{ mainguest[0]['maxinvite']}} guests with you.</p>
+    <p style='font-weight: bold;'>Please provide information until APRIL 30,2021.</p>
+    <h4>Here is an overview of your preferences and that of your guests</h4>
+    <table>
+        <tr>
+            <td>
+                <h6>Your preferences</h6>
+                <ul>
+                    <li>
+                        {% if mainguest[0]['tablenum'] == 0%}
+                            Please choose tablenumber in 'Choose table'
+                        {% else %}
+                            Tablenumber: {{ mainguest[0]['tablenum']}}
+                        {% endif%}
+                    </li>
+                    <li>
+                        {% if mainguest[0]['apetizer'] == 0%}
+                            Please choose apetizer in 'Choose menu'
+                        {% else %}
+                            Apetizer:
+                            {% if mainguest[0]['apetizer'] == 1%}
+                                Mixed green salad with a raspberry-infused vinaigrette
+                            {% elif mainguest[0]['apetizer'] == 2%}
+                                Mini shrimp salad rolls
+                            {%else%}
+                                Bacon-wrapped dates
+                            {% endif %}
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if mainguest[0]['maincourse'] == 0%}
+                            Please choose maincourse in 'Choose menu'
+                        {% else %}
+                            Maincourse:
+                            {% if mainguest[0]['maincourse'] == 1%}
+                                Wild mushroom risotto
+                            {% elif mainguest[0]['maincourse'] == 2%}
+                                Grilled chicken with sweet summer vegetables
+                            {%else%}
+                                Filet mignon with green beans
+                            {% endif %}
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if mainguest[0]['comment'] == 'No comment'%}
+                            Notes: no comment added
+                        {% else %}
+                            Notes: {{ mainguest[0]['comment'] }}
+                        {% endif %}
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        {% for guest in plusone %}
+        <tr>
+            <td>
+                <h6>{{ guest['firstname'] }} {{ guest['lastname'] }}'s preferences</h6>
+                                <ul>
+                    <li>
+                        {% if guest['tablenum'] == 0%}
+                            Please choose tablenumber in 'Choose table'
+                        {% else %}
+                            Tablenumber: {{ guest['tablenum']}}
+                        {% endif%}
+                    </li>
+                    <li>
+                        {% if guest['apetizer'] == 0%}
+                            Please choose apetizer in 'Choose menu'
+                        {% else %}
+                            Apetizer:
+                            {% if guest['apetizer'] == 1%}
+                                Mixed green salad with a raspberry-infused vinaigrette
+                            {% elif guest['apetizer'] == 2%}
+                                Mini shrimp salad rolls
+                            {%else%}
+                                Bacon-wrapped dates
+                            {% endif %}
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if guest['maincourse'] == 0%}
+                            Please choose maincourse in 'Choose menu'
+                        {% else %}
+                            Maincourse:
+                            {% if guest['maincourse'] == 1%}
+                                Wild mushroom risotto
+                            {% elif guest['maincourse'] == 2%}
+                                Grilled chicken with sweet summer vegetables
+                            {%else%}
+                                Filet mignon with green beans
+                            {% endif %}
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if guest['comment'] == 'No comment'%}
+                            Notes: no comment added
+                        {% else %}
+                            Notes: {{ guest['comment'] }}
+                        {% endif %}
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+    font-style: cursive;
+}
+
+table .tableoverview
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+
+table .tdo
+{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/*main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+*/
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}

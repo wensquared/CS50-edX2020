@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Pokemon</title>
+        <style>
+          /* Style the header */
+          header {
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+          }
+
+          /* Container for flexboxes */
+          section {
+            display: -webkit-flex;
+            display: flex;
+          }
+
+          /* Style the content */
+          article {
+            -webkit-flex: 3;
+            -ms-flex: 3;
+            flex: 3;
+            padding: 10px;
+          }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  <a class="nav-link" href="pokemon.html">Pokemon</a>
+                  <a class="nav-link" href="crypto.html">Cryptocurrency</a>
+                  <a class="nav-link" href="vienna.html">City Vienna</a>
+                </div>
+              </div>
+            </div>
+        </nav>
+        <header>
+          <img src="PokemonLogo.svg" width="1050" height="150">
+        </header>
+        <section>
+          <img src="growlithe.png" alt="Growlithe" width="600" height="600">
+          <article>
+            <h3>Origin:</h3>
+            <br>
+            Growlithe is most likely based on Japanese dog statues called 獅子 shisa. They may also originate from Chinese 獅 shī or Japanese 狛犬 komainu,
+            which are guardian statues that resemble lions,
+            with traits of tigers and dogs. They are incorrectly called "Foo dogs" in the West. Both shisa and shī statues alike are often found in pairs, believed to invite good luck,
+            and used as guardians, which may have inspired Growlithe's protective nature.
+            <br><br>
+            <h3>Trivia</h3> <br>
+            <ul>
+              <li>The beta Pokémon names in Red and Blue listed Growlithe as Flamie.</li>
+              <li>Growlithe can be seen as a parallel to Vulpix. Both are Generation I Pokémon that evolve once via a Fire Stone.
+                  Growlithe is exclusive to Pokémon Red, Blue (Japan), Gold, FireRed, and HeartGold while Vulpix is to Green, Blue, Silver, LeafGreen, and SoulSilver.
+                  Growlithe has a 75% chance of being male while Vulpix has a 75% of being female, they are both in the Field Egg Group, can have the Ability Flash Fire,
+                  and are yellow when Shiny from Generation III on. Furthermore, both are based primarily on canine-like creatures of Japanese folklore: Growlithe on the shisa, Vulpix on the kitsune.</li>
+              <li>Growlithe shares its category with Lillipup, Rockruff, and Yamper. They are all known as the Puppy Pokémon.</li>
+              <li>Growlithe and its evolved form are the only Pokémon with a male-female ratio of 3:1 that aren't in the Human-Like Egg Group.</li>
+            </ul>
+          </article>
+        </section>
+        <div class="footer">
+          <p>
+            <cite>navbar from <a href="https://getbootstrap.com/docs/5.0/components/navbar/">boostrap.com</a></cite><br>
+            <cite>Pic and info of growlith from <a href="https://bulbapedia.bulbagarden.net/wiki/Growlithe_(Pokemon)">https://bulbapedia.bulbagarden.net/wiki/Growlithe_(Pokemon)</a></cite><br>
+            <cite>Pokemon Logo from <a href="https://en.wikipedia.org/wiki/Game_Freak">Gamefreak</a></cite>
+          </p>
+          <select>
+            <option value="large">Large Text</option>
+            <option value="initial" selected>Medium Text</option>
+            <option value="small">Small Text</option>
+          </select>
+          <script>
+            document.querySelector("select").onchange = function(){
+              document.querySelector("article").style.fontSize = this.value;
+              document.querySelector("cite").style.fontSize = this.value;
+            }
+          </script>
+          <button onclick='dark()'>Dark mode on/off</button>
+          <script>
+            function dark() {
+             var element = document.body;
+             element.classList.toggle("dark-mode");
+            }
+          </script>
+        </div>
+    </body>
+</html>

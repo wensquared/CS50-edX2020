@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Menu
+{% endblock %}
+
+{% block main %}
+
+    <form action="/table" method="post">
+        <div class="form-group">
+            <select class="form-control" name="firstname" required>
+                <option disabled selected value>Choose person</option>
+                    <option value="{{ guest[0]['firstname'] }}">{{ guest[0]['firstname'] }} {{ guest[0]['lastname'] }}</option>
+                {% for plusone in plusone %}
+                    <option value="{{ plusone['firstname'] }}">{{ plusone['firstname'] }} {{ plusone['lastname'] }}</option>
+                {% endfor %}
+            </select> <br>
+            <select class="form-control" name="tablenum" required>
+                <option disabled selected value>Choose Table</option>
+                    <option value="1">Table 1</option>
+                    <option value="2">Table 2</option>
+                    <option value="3">Table 3</option>
+                    <option value="4">Table 4</option>
+                    <option value="5">Table 5</option>
+                    <option value="6">Table 6</option>
+                    <option value="7">Table 7</option>
+                    <option value="8">Table 8</option>
+            </select>
+        </div> <br>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form> <br>
+
+    <table class='tableoverview'>
+        <tr>
+            <td class='tdo'>
+                <h6>Table 1</h6>
+                <ul>
+                    {% for name in table  %}
+                        {% if name.tablenum == 1%}
+                                <li>{{ name.firstname }} {{name.lastname}}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            </td>
+            <td class='tdo'>
+                <h6>Table 2</h6>
+                <ul>
+                    {% for name in table  %}
+                        {% if name.tablenum == 2%}
+                                <li>{{ name.firstname }} {{name.lastname}}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            </td>
+            <td class='tdo'>
+                <h6>Table 3</h6>
+                <ul>
+                    {% for name in table  %}
+                        {% if name.tablenum == 3%}
+                                <li>{{ name.firstname }} {{name.lastname}}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            </td>
+            <td class='tdo'>
+                <h6>Table 4</h6>
+                <ul>
+                    {% for name in table  %}
+                        {% if name.tablenum == 4%}
+                                <li>{{ name.firstname }} {{name.lastname}}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            </td>
+        </tr>
+        <tr>
+            <td class='tdo'>
+                <h6>Table 5</h6>
+                <ul>
+                    {% for name in table  %}
+                        {% if name.tablenum == 5%}
+                                <li>{{ name.firstname }} {{name.lastname}}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            </td>
+            <td class='tdo'>
+                <h6>Table 6</h6>
+                <ul>
+                    {% for name in table  %}
+                        {% if name.tablenum == 6%}
+                                <li>{{ name.firstname }} {{name.lastname}}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            </td>
+            <td class='tdo'>
+                <h6>Table 7</h6>
+                <ul>
+                    {% for name in table  %}
+                        {% if name.tablenum == 7%}
+                                <li>{{ name.firstname }} {{name.lastname}}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            </td>
+            <td class='tdo'>
+                <h6>Table 8</h6>
+                <ul>
+                    {% for name in table  %}
+                        {% if name.tablenum == 8%}
+                                <li>{{ name.firstname }} {{name.lastname}}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            </td>
+        </tr>
+    </table>
+
+
+{% endblock %}

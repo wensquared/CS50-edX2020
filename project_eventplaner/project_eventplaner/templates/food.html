@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Menu
+{% endblock %}
+
+{% block main %}
+
+    <form action="/food" method="post">
+        <div class="form-group">
+            <select class="form-control" name="firstname" required>
+                <option disabled selected value>Choose person</option>
+                    <option value="{{ guest[0]['firstname'] }}">{{ guest[0]['firstname'] }} {{ guest[0]['lastname'] }}</option>
+                {% for plusone in plusone %}
+                    <option value="{{ plusone['firstname'] }}">{{ plusone['firstname'] }} {{ plusone['lastname'] }}</option>
+                {% endfor %}
+            </select> <br>
+            <select class="form-control" name="apetizer" required>
+                <option disabled selected value>Choose Appetizer</option>
+                    <option value="1">1. Salad</option>
+                    <option value="2">2. Shrimp</option>
+                    <option value="3">3. Bacon</option>
+            </select> <br>
+            <select class="form-control" name="main" required>
+                <option disabled selected value>Choose main course</option>
+                    <option value="1">1. Risotto</option>
+                    <option value="2">2. Chicken</option>
+                    <option value="3">3. Filet mignon</option>
+            </select> <br>
+            <input autocomplete="off" autofocus class="form-control" name="comment" placeholder="Comment/ any allergies/ preferences" type="text">
+        </div> <br>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form> <br>
+    
+    <h2>Appetizers:</h2>
+        <ol>
+            <li>Mixed green salad with a raspberry-infused vinaigrette</li>
+            <li>Mini shrimp salad rolls</li>
+            <li>Bacon-wrapped dates</li>
+        </ol>
+    <h2>Main Course</h2>
+        <ol>
+            <li>Wild mushroom risotto</li>
+            <li>Grilled chicken with sweet summer vegetables</li>
+            <li>Filet mignon with green beans</li>
+        </ol>
+{% endblock %}

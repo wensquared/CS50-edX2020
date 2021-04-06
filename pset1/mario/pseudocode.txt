@@ -1,0 +1,9 @@
+Ask user for height
+  if height is <1 or >8
+     return to line 1
+  else
+     return height
+
+
+iterate from 1 through height
+  On iteration i, print out i hashes and new line

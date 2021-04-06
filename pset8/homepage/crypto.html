@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Cryptocurrency</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  <a class="nav-link" href="pokemon.html">Pokemon</a>
+                  <a class="nav-link" href="crypto.html">Cryptocurrency</a>
+                  <a class="nav-link" href="vienna.html">City Vienna</a>
+                </div>
+              </div>
+            </div>
+        </nav>
+        <img style="float:left; padding: 15px;" src="bitcoin.png" height="350" width="600">
+        Bitcoin[a] (₿) is a cryptocurrency invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto[15] and started in 2009[16] when its
+        implementation was released as open-source software.[7]:ch. 1
+        It is a decentralized digital currency without a central bank or single administrator that can be sent from user to user on the peer-to-peer bitcoin network without
+        the need for intermediaries.[8] Transactions are verified by network nodes through cryptography and recorded in a public distributed ledger called a blockchain.
+        Bitcoins are created as a reward for a process known as mining. They can be exchanged for other currencies, products, and services.[17] Research produced by the University
+        of Cambridge estimates that in 2017, there were 2.9 to 5.8 million unique users using a cryptocurrency wallet, most of them using bitcoin.[18]
+        Bitcoin has been criticized for its use in illegal transactions, the large amount of electricity used by miners, price volatility, and thefts from exchanges.
+        Some economists, including several Nobel laureates, have characterized it as a speculative bubble. Bitcoin has also been used as an investment, although several regulatory
+        agencies have issued investor alerts about bitcoin.[19][20]
+        <div class="footer">
+          <p><cite>navbar from <a href="https://getbootstrap.com/docs/5.0/components/navbar/">boostrap.com</a></cite><br>
+            <cite></cite>
+          </p>
+          <select>
+            <option value="large">Large Text</option>
+            <option value="initial" selected>Medium Text</option>
+            <option value="small">Small Text</option>
+          </select>
+          <script>
+            document.querySelector("select").onchange = function(){
+              document.querySelector("p").style.fontSize = this.value;
+              document.querySelector("cite").style.fontSize = this.value;
+            }
+          </script>
+          <button onclick='dark()'>Dark mode on/off</button>
+          <script>
+            function dark() {
+             var element = document.body;
+             element.classList.toggle("dark-mode");
+            }
+          </script>
+        </div>
+    </body>
+</html>

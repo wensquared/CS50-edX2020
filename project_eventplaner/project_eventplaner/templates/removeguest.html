@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <p>Info: If for some reason your companion(s) can't attend anymore, please delete them with this form.</p>
+    <form action="/removeguest" method="post">
+        <div class="form-group">
+            <select class="form-control" name="idnumber" required>
+                <option disabled selected value>Remove guest</option>
+
+                {% for guest in plusone %}
+                    <option value="{{ guest['id'] }}">{{ guest['firstname'] }} {{ guest['lastname'] }}</option>
+                {% endfor %}
+            </select>
+        </div> <br>
+        <button class="btn btn-danger" type="submit">Remove</button>
+    </form>
+
+{% endblock %}
